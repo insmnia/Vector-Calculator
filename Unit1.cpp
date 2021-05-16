@@ -3,9 +3,13 @@
 #include <vcl.h>
 #include <fstream>
 #include <string>
+
+#include <Dialogs.hpp>
 #pragma hdrstop
 
 #include "Unit1.h"
+#define toint(a) StrToInt(a)
+#define tostr(a) IntToStr(a)
 // ---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -16,48 +20,67 @@ __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner) {
 }
 
 // ---------------------------------------------------------------------------
-void __fastcall print(TObject *Sender) {
-	ShowMessage(((TEdit *)Sender)->Text);
-}
-
 // ---------------------------------------------------------------------------
 void __fastcall TForm1::addingClick(TObject *Sender) {
+	fstream solution("Solution.txt", ios::out);
 	if (x1->Text != "" && x2->Text != "" && y1->Text != "" && y2->Text != "") {
-		x3->Text = StrToInt(x1->Text) + StrToInt(x2->Text);
-		y3->Text = StrToInt(y1->Text) + StrToInt(y2->Text);
+		x3->Text = toint(x1->Text) + toint(x2->Text);
+		y3->Text = toint(y1->Text) + toint(y2->Text);
+		solution << toint(x1->Text) << " + " << toint(x2->Text)
+			<< " = " << toint(x3->Text) << "\n";
+		solution << toint(y1->Text) << " + " << toint(y2->Text)
+			<< " = " << toint(y3->Text) << "\n";
 		if (VectorAmount->Text == "Трехмерный вектор") {
-			if (z1->Text != "" && z2->Text != "")
-				z3->Text = StrToInt(z1->Text) + StrToInt(z2->Text);
+			if (z1->Text != "" && z2->Text != "") {
+				solution << toint(z1->Text) << " + " << toint(z2->Text)
+					<< " = " << toint(z3->Text) << "\n";
+				z3->Text = toint(z1->Text) + toint(z2->Text);
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
 
 		}
 		if (VectorAmount->Text == "Четырехмерный вектор") {
-			if (z1->Text != "" && z2->Text != "")
-				z3->Text = StrToInt(z1->Text) + StrToInt(z2->Text);
+			if (z1->Text != "" && z2->Text != "") {
+				z3->Text = toint(z1->Text) + toint(z2->Text);
+				solution << toint(z1->Text) << " + " << toint(z2->Text)
+					<< " = " << toint(z3->Text) << "\n";
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
-			if (q1->Text != "" && q2->Text != "")
-				q3->Text = StrToInt(q1->Text) + StrToInt(q2->Text);
+			if (q1->Text != "" && q2->Text != "") {
+				q3->Text = toint(q1->Text) + toint(q2->Text);
+				solution << toint(q1->Text) << " + " << toint(q2->Text)
+					<< " = " << toint(q3->Text) << "\n";
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
 		}
 		if (VectorAmount->Text == "Пятимерный вектор") {
-			if (z1->Text != "" && z2->Text != "")
-				z3->Text = StrToInt(z1->Text) + StrToInt(z2->Text);
+			if (z1->Text != "" && z2->Text != "") {
+				z3->Text = toint(z1->Text) + toint(z2->Text);
+				solution << toint(z1->Text) << " + " << toint(z2->Text)
+					<< " = " << toint(z3->Text) << "\n";
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
-			if (w1->Text != "" && w2->Text != "")
-				w3->Text = StrToInt(w1->Text) + StrToInt(w2->Text);
+			if (w1->Text != "" && w2->Text != "") {
+				w3->Text = toint(w1->Text) + toint(w2->Text);
+				solution << toint(w1->Text) << " + " << toint(w2->Text)
+					<< " = " << toint(w3->Text) << "\n";
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
-			if (q1->Text != "" && q2->Text != "")
-				q3->Text = StrToInt(q1->Text) + StrToInt(q2->Text);
+			if (q1->Text != "" && q2->Text != "") {
+				q3->Text = toint(q1->Text) + toint(q2->Text);
+				solution << toint(q1->Text) << " + " << toint(q2->Text)
+					<< " = " << toint(q3->Text) << "\n";
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
@@ -71,42 +94,65 @@ void __fastcall TForm1::addingClick(TObject *Sender) {
 // ---------------------------------------------------------------------------
 
 void __fastcall TForm1::subscriptionClick(TObject *Sender) {
+	fstream solution("Solution.txt", ios::out);
 	if (x1->Text != "" && x2->Text != "" && y1->Text != "" && y2->Text != "") {
-		x3->Text = StrToInt(x1->Text) - StrToInt(x2->Text);
-		y3->Text = StrToInt(y1->Text) - StrToInt(y2->Text);
+		x3->Text = toint(x1->Text) - toint(x2->Text);
+		y3->Text = toint(y1->Text) - toint(y2->Text);
+		solution << toint(x1->Text) << " - " << toint(x2->Text)
+			<< " = " << toint(x3->Text) << "\n";
+		solution << toint(y1->Text) << " - " << toint(y2->Text)
+			<< " = " << toint(y3->Text) << "\n";
 		if (VectorAmount->Text == "Трехмерный вектор") {
-			if (z1->Text != "" && z2->Text != "")
-				z3->Text = StrToInt(z1->Text) - StrToInt(z2->Text);
+			if (z1->Text != "" && z2->Text != "") {
+				solution << toint(z1->Text) << " - " << toint(z2->Text)
+					<< " = " << toint(z3->Text) << "\n";
+				z3->Text = toint(z1->Text) - toint(z2->Text);
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
 
 		}
 		if (VectorAmount->Text == "Четырехмерный вектор") {
-			if (z1->Text != "" && z2->Text != "")
-				z3->Text = StrToInt(z1->Text) - StrToInt(z2->Text);
+			if (z1->Text != "" && z2->Text != "") {
+				z3->Text = toint(z1->Text) - toint(z2->Text);
+				solution << toint(z1->Text) << " - " << toint(z2->Text)
+					<< " = " << toint(z3->Text) << "\n";
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
-			if (q1->Text != "" && q2->Text != "")
-				q3->Text = StrToInt(q1->Text) - StrToInt(q2->Text);
+			if (q1->Text != "" && q2->Text != "") {
+				q3->Text = toint(q1->Text) - toint(q2->Text);
+				solution << toint(q1->Text) << " - " << toint(q2->Text)
+					<< " = " << toint(q3->Text) << "\n";
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
 		}
 		if (VectorAmount->Text == "Пятимерный вектор") {
-			if (z1->Text != "" && z2->Text != "")
-				z3->Text = StrToInt(z1->Text) + StrToInt(z2->Text);
+			if (z1->Text != "" && z2->Text != "") {
+				z3->Text = toint(z1->Text) - toint(z2->Text);
+				solution << toint(z1->Text) << " - " << toint(z2->Text)
+					<< " = " << toint(z3->Text) << "\n";
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
-			if (w1->Text != "" && w2->Text != "")
-				w3->Text = StrToInt(w1->Text) - StrToInt(w2->Text);
+			if (w1->Text != "" && w2->Text != "") {
+				w3->Text = toint(w1->Text) - toint(w2->Text);
+				solution << toint(w1->Text) << " - " << toint(w2->Text)
+					<< " = " << toint(w3->Text) << "\n";
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
-			if (q1->Text != "" && q2->Text != "")
-				q3->Text = StrToInt(q1->Text) - StrToInt(q2->Text);
+			if (q1->Text != "" && q2->Text != "") {
+				q3->Text = toint(q1->Text) - toint(q2->Text);
+				solution << toint(q1->Text) << " - " << toint(q2->Text)
+					<< " = " << toint(q3->Text) << "\n";
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
@@ -120,72 +166,103 @@ void __fastcall TForm1::subscriptionClick(TObject *Sender) {
 // ---------------------------------------------------------------------------
 
 void __fastcall TForm1::scalarClick(TObject *Sender) {
+	fstream solution("Solution.txt", ios::out);
+	int result = 0;
 	if (x1->Text != "" && x2->Text != "" && y1->Text != "" && y2->Text != "") {
-		x3->Text = StrToInt(x1->Text) * StrToInt(x2->Text);
-		y3->Text = StrToInt(y1->Text) * StrToInt(y2->Text);
+		result += toint(x1->Text) * toint(x2->Text);
+		result += toint(y1->Text) * toint(y2->Text);
+		solution << toint(x1->Text) << " * " << toint(x2->Text)
+			<< " = " << toint(x1->Text) * toint(x2->Text) << '\n';
+		solution << toint(y1->Text) << " * " << toint(y2->Text)
+			<< " = " << toint(y1->Text) * toint(y2->Text) << '\n';
 		if (VectorAmount->Text == "Трехмерный вектор") {
-			if (z1->Text != "" && z2->Text != "")
-				z3->Text = StrToInt(z1->Text) * StrToInt(z2->Text);
+			if (z1->Text != "" && z2->Text != "") {
+				result += toint(z1->Text) * toint(z2->Text);
+				solution << toint(z1->Text) << " * " << toint(z2->Text)
+					<< " = " << toint(z1->Text) * toint(z2->Text) << '\n';
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
 
 		}
 		if (VectorAmount->Text == "Четырехмерный вектор") {
-			if (z1->Text != "" && z2->Text != "")
-				z3->Text = StrToInt(z1->Text) * StrToInt(z2->Text);
+			if (z1->Text != "" && z2->Text != "") {
+				result += toint(z1->Text) * toint(z2->Text);
+				solution << toint(z1->Text) << " * " << toint(z2->Text)
+					<< " = " << toint(z1->Text) * toint(z2->Text) << '\n';
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
-			if (q1->Text != "" && q2->Text != "")
-				q3->Text = StrToInt(q1->Text) * StrToInt(q2->Text);
+			if (q1->Text != "" && q2->Text != "") {
+				result += toint(q1->Text) * toint(q2->Text);
+				solution << toint(q1->Text) << " * " << toint(q2->Text)
+					<< " = " << toint(q1->Text) * toint(q2->Text) << '\n';
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
+
 		}
 		if (VectorAmount->Text == "Пятимерный вектор") {
-			if (z1->Text != "" && z2->Text != "")
-				z3->Text = StrToInt(z1->Text) * StrToInt(z2->Text);
+			if (z1->Text != "" && z2->Text != "") {
+				solution << toint(z1->Text) << " * " << toint(z2->Text)
+					<< " = " << toint(z1->Text) * toint(z2->Text) << '\n';
+				result += toint(z1->Text) * toint(z2->Text);
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
-			if (w1->Text != "" && w2->Text != "")
-				w3->Text = StrToInt(w1->Text) * StrToInt(w2->Text);
+			if (w1->Text != "" && w2->Text != "") {
+				solution << toint(w1->Text) << " * " << toint(w2->Text)
+					<< " = " << toint(w1->Text) * toint(w2->Text) << '\n';
+				result += toint(w1->Text) * toint(w2->Text);
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
-			if (q1->Text != "" && q2->Text != "")
-				q3->Text = StrToInt(q1->Text) * StrToInt(q2->Text);
+			if (q1->Text != "" && q2->Text != "") {
+				solution << toint(q1->Text) << " * " << toint(q2->Text)
+					<< " = " << toint(q1->Text) * toint(q2->Text) << '\n';
+				result += toint(q1->Text) * toint(q2->Text);
+			}
 			else {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
+			ErrorLabel->Caption = "";
+
 		}
-		ErrorLabel->Caption = "";
 	}
+
 	else {
 		ErrorLabel->Caption = "Заполните все поля!";
 	}
+	if (ErrorLabel->Caption == "")
+		ShowMessage("Скалярное произведение = " + IntToStr(result));
+
 }
+
 // ---------------------------------------------------------------------------
 
 void __fastcall TForm1::drawClick(TObject *Sender) {
 	if (VectorAmount->Text == "Двумерный вектор" && x1->Text != "" &&
 		y1->Text != "") {
 		fstream coordinates_file("coords.txt", ios::out);
-		coordinates_file << (StrToInt(x1->Text));
+		coordinates_file << (toint(x1->Text));
 		coordinates_file << "\n";
-		coordinates_file << (StrToInt(y1->Text));
+		coordinates_file << (toint(y1->Text));
 		coordinates_file.close();
 		system("py draw2D.py");
 	}
 	else if (VectorAmount->Text == "Трехмерный вектор" && x1->Text != "" &&
 		y1->Text != "" && z1->Text != "") {
 		fstream coordinates_file("coords.txt", ios::out);
-		coordinates_file << (StrToInt(x1->Text));
+		coordinates_file << (toint(x1->Text));
 		coordinates_file << "\n";
-		coordinates_file << (StrToInt(y1->Text));
+		coordinates_file << (toint(y1->Text));
 		coordinates_file << "\n";
-		coordinates_file << (StrToInt(z1->Text));
+		coordinates_file << (toint(z1->Text));
 		coordinates_file.close();
 		system("py draw3D.py");
 	}
@@ -196,17 +273,23 @@ void __fastcall TForm1::vectorClick(TObject *Sender) {
 	if (VectorAmount->Text == "Трехмерный вектор") {
 		if (x1->Text != "" && y1->Text != "" && z1->Text != "" && x2->Text !=
 			"" && y2->Text != "" && z2->Text != "") {
-			x3->Text = IntToStr(StrToInt(y1->Text) * StrToInt(z1->Text) -
-				StrToInt(y2->Text) * StrToInt(z1->Text));
-			y3->Text = IntToStr(StrToInt(x2->Text) * StrToInt(z1->Text) -
-				StrToInt(x1->Text) * StrToInt(z2->Text));
-			z3->Text = IntToStr(StrToInt(x1->Text) * StrToInt(y2->Text) -
-				StrToInt(y1->Text) * StrToInt(x2->Text));
+			x3->Text =
+				IntToStr(toint(y1->Text) * toint(z1->Text) - toint(y2->Text)
+				* toint(z1->Text));
+			y3->Text =
+				IntToStr(toint(x2->Text) * toint(z1->Text) - toint(x1->Text)
+				* toint(z2->Text));
+			z3->Text =
+				IntToStr(toint(x1->Text) * toint(y2->Text) - toint(y1->Text)
+				* toint(x2->Text));
 			ErrorLabel->Caption = "";
 		}
 		else {
 			ErrorLabel->Caption = "Заполните все поля!";
 		}
+	}
+	else {
+		ErrorLabel->Caption = "Выберите трехмерный вектор!";
 	}
 }
 // ---------------------------------------------------------------------------
@@ -227,55 +310,49 @@ void __fastcall TForm1::clearClick(TObject *Sender) {
 	z3->Text = "";
 	q3->Text = "";
 	w3->Text = "";
+	ErrorLabel->Caption = "";
 }
 // ---------------------------------------------------------------------------
 
 void __fastcall TForm1::create_randomClick(TObject *Sender) {
 	randomize();
-	x1->Text = random(21) - 10;
-	x2->Text = random(21) - 10;
-	y1->Text = random(21) - 10;
-	y2->Text = random(21) - 10;
-	if (VectorAmount->Text == "Трехмерный вектор") {
-		z1->Text = random(21) - 10;
-		z2->Text = random(21) - 10;
+	if (LeftBorder->Text != "" && RightBorder->Text != "") {
+		int left = toint(LeftBorder->Text);
+		int right = toint(RightBorder->Text) + 1;
+		if (left > right) {
+			ErrorLabel->Caption = "Некорретные границы!";
+			return;
+		}
+		x1->Text = random(right - left) + left;
+		x2->Text = random(right - left) + left;
+		y1->Text = random(right - left) + left;
+		y2->Text = random(right - left) + left;
+		if (VectorAmount->Text == "Трехмерный вектор") {
+			z1->Text = random(right - left) + left;
+			z2->Text = random(right - left) + left;
+		}
+		if (VectorAmount->Text == "Четырехмерный вектор") {
+			z1->Text = random(right - left) + left;
+			z2->Text = random(right - left) + left;
+			q1->Text = random(right - left) + left;
+			q2->Text = random(right - left) + left;
+		}
+		if (VectorAmount->Text == "Пятимерный вектор") {
+			z1->Text = random(right - left) + left;
+			z2->Text = random(right - left) + left;
+			w1->Text = random(right - left) + left;
+			w2->Text = random(right - left) + left;
+			q1->Text = random(right - left) + left;
+			q2->Text = random(right - left) + left;
+		}
+		ErrorLabel->Caption = "";
 	}
-	if (VectorAmount->Text == "Четырехмерный вектор") {
-		z1->Text = random(21) - 10;
-		z2->Text = random(21) - 10;
-		q1->Text = random(21) - 10;
-		q2->Text = random(21) - 10;
-	}
-	if (VectorAmount->Text == "Пятимерный вектор") {
-		z1->Text = random(21) - 10;
-		z2->Text = random(21) - 10;
-		w1->Text = random(21) - 10;
-		w2->Text = random(21) - 10;
-		q1->Text = random(21) - 10;
-		q2->Text = random(21) - 10;
+	else {
+		ErrorLabel->Caption = "Некорректные данные!";
 	}
 
 }
 // ---------------------------------------------------------------------------
-
-void __fastcall TForm1::x1KeyPress(TObject *Sender, System::WideChar &Key) {
-	if (isdigit(Key) || (Key == VK_BACK)) {
-		return;
-	}
-
-	else if ((Key == '-' || Key == '+') && (x1->Text.Length() == 0))
-		return;
-	if (Key == '.' || Key == ',') {
-
-		Key = FormatSettings.DecimalSeparator;
-
-		if (x1->Text.Pos(Key) != 0)
-			Key = 0;
-		else
-			return;
-	}
-	Key = 0;
-}
 
 // ---------------------------------------------------------------------------
 void __fastcall TForm1::VectorAmountChange(TObject *Sender) {
@@ -315,17 +392,12 @@ void __fastcall TForm1::VectorAmountChange(TObject *Sender) {
 		q3->Visible = true;
 	}
 }
-// ---------------------------------------------------------------------------
-void __fastcall TForm1::FormActivate(TObject *Sender)
-{
-//	Form1->Top = Screen->Height/2;
-//	Form1->Left = Screen->Width/2;
-}
-//---------------------------------------------------------------------------
 
-void __fastcall TForm1::clearimgClick(TObject *Sender)
-{
-    x1->Text = "";
+// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+
+void __fastcall TForm1::clearimgClick(TObject *Sender) {
+	x1->Text = "";
 	y1->Text = "";
 	z1->Text = "";
 	q1->Text = "";
@@ -340,6 +412,54 @@ void __fastcall TForm1::clearimgClick(TObject *Sender)
 	z3->Text = "";
 	q3->Text = "";
 	w3->Text = "";
+	ErrorLabel->Caption = "";
 }
-//---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+
+void __fastcall TForm1::x1KeyPress(TObject *Sender, System::WideChar &Key) {
+	if (isdigit(Key) || (Key == VK_BACK)) {
+		return;
+	}
+
+	else if ((Key == '-' || Key == '+') && (((TEdit*)Sender)->Text.Length
+		() == 0))
+		return;
+	if (Key == '.' || Key == ',') {
+
+		Key = FormatSettings.DecimalSeparator;
+
+		if (((TEdit *)Sender)->Text.Pos(Key) != 0)
+			Key = 0;
+		else
+			return;
+	}
+	Key = 0;
+}
+
+// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+void __fastcall TForm1::TurnVectorClick(TObject *Sender) {
+	if (x1->Text != "" && y1->Text != "") {
+		AnsiString degrees =
+			InputBox("Градус",
+			"Введите градус, на который нужно повернуть вектор", "");
+		int i;
+		if (degrees != "" && TryStrToInt(degrees, i)) {
+			fstream coords("coords.txt", ios::out);
+			coords << (toint(x1->Text)) << "\n";
+			coords << (toint(y1->Text)) << "\n";
+			coords << (toint(degrees)) << "\n";
+			coords.close();
+			system("py turn_vector.py");
+		}
+		else {
+			ErrorLabel->Caption = "Некорректный угол!";
+		}
+	}
+	else {
+		ErrorLabel->Caption = "Заполните все поля!";
+	}
+}
+// ---------------------------------------------------------------------------

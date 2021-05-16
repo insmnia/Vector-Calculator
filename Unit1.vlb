@@ -1,5 +1,5 @@
 ﻿[]
-Coordinates=10,214,64,36
+Coordinates=247,146,44,58
 
 [adding]
 Coordinates=79,10,59,58
@@ -15,9 +15,6 @@ Coordinates=148,10,59,58
 
 [draw]
 Coordinates=311,78,59,58
-
-[x1]
-Coordinates=247,146,44,58
 
 [y1]
 Coordinates=379,10,44,58

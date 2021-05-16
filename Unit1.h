@@ -1,8 +1,8 @@
-//---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 #ifndef Unit1H
 #define Unit1H
-//---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
@@ -12,11 +12,11 @@
 #include <Vcl.Grids.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Imaging.pngimage.hpp>
-//---------------------------------------------------------------------------
-class TForm1 : public TForm
-{
-__published:	// IDE-managed Components
-	TEdit *x1;
+#include <Vcl.Graphics.hpp>
+
+// ---------------------------------------------------------------------------
+class TForm1 : public TForm {
+__published: // IDE-managed Components
 	TEdit *y1;
 	TEdit *z1;
 	TEdit *q1;
@@ -37,11 +37,17 @@ __published:	// IDE-managed Components
 	TButton *vector;
 	TButton *draw;
 	TButton *create_random;
-	TButton *Button1;
 	TLabel *Label1;
 	TComboBox *VectorAmount;
 	TLabel *ErrorLabel;
 	TImage *clearimg;
+	TEdit *x1;
+	TEdit *LeftBorder;
+	TLabel *Label2;
+	TEdit *RightBorder;
+	TLabel *Label3;
+	TButton *TurnVector;
+
 	void __fastcall addingClick(TObject *Sender);
 	void __fastcall subscriptionClick(TObject *Sender);
 	void __fastcall scalarClick(TObject *Sender);
@@ -51,14 +57,15 @@ __published:	// IDE-managed Components
 	void __fastcall create_randomClick(TObject *Sender);
 	void __fastcall x1KeyPress(TObject *Sender, System::WideChar &Key);
 	void __fastcall VectorAmountChange(TObject *Sender);
-	void __fastcall FormActivate(TObject *Sender);
 	void __fastcall clearimgClick(TObject *Sender);
+	void __fastcall TurnVectorClick(TObject *Sender);
 
-private:	// User declarations
-public:		// User declarations
+private: // User declarations
+public: // User declarations
 	__fastcall TForm1(TComponent* Owner);
 };
-//---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;
-//---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 #endif

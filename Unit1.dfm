@@ -1,24 +1,23 @@
 object Form1: TForm1
   Left = 100
   Top = 0
-  BorderStyle = bsToolWindow
   Caption = #1050#1072#1083#1100#1082#1091#1083#1103#1090#1086#1088
-  ClientHeight = 285
-  ClientWidth = 643
+  ClientHeight = 282
+  ClientWidth = 587
   Color = 15724527
+  TransparentColorValue = clYellow
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poDesigned
-  OnActivate = FormActivate
+  Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 374
-    Top = 8
+    Left = 350
+    Top = 0
     Width = 192
     Height = 25
     Caption = #1042#1099#1073#1077#1088#1080#1090#1077' '#1076#1077#1081#1089#1090#1074#1080#1077
@@ -30,22 +29,22 @@ object Form1: TForm1
     ParentFont = False
   end
   object ErrorLabel: TLabel
-    Left = 24
-    Top = 133
-    Width = 3
-    Height = 13
+    Left = 0
+    Top = 125
+    Width = 4
+    Height = 16
     Color = clRed
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
-    Font.Height = -11
+    Font.Height = -13
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
   end
   object clearimg: TImage
-    Left = 258
-    Top = 128
+    Left = 234
+    Top = 120
     Width = 27
     Height = 31
     Picture.Data = {
@@ -182,17 +181,32 @@ object Form1: TForm1
     Transparent = True
     OnClick = clearimgClick
   end
-  object x1: TEdit
-    Left = 24
-    Top = 15
+  object Label2: TLabel
+    Left = 0
+    Top = 261
+    Width = 14
+    Height = 13
+    Caption = #1054#1090
+  end
+  object Label3: TLabel
+    Left = 59
+    Top = 261
+    Width = 14
+    Height = 13
+    Caption = #1044#1086
+  end
+  object y1: TEdit
+    Left = 54
+    Top = 9
     Width = 40
     Height = 40
+    Align = alCustom
     Alignment = taCenter
     BorderStyle = bsNone
     Color = 3221538
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -21
     Font.Name = 'Tahoma'
     Font.Pitch = fpFixed
     Font.Style = []
@@ -200,9 +214,9 @@ object Form1: TForm1
     TabOrder = 0
     OnKeyPress = x1KeyPress
   end
-  object y1: TEdit
-    Left = 78
-    Top = 16
+  object z1: TEdit
+    Left = 110
+    Top = 7
     Width = 40
     Height = 40
     Align = alCustom
@@ -211,16 +225,18 @@ object Form1: TForm1
     Color = 3221538
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -21
     Font.Name = 'Tahoma'
     Font.Pitch = fpFixed
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    Visible = False
+    OnKeyPress = x1KeyPress
   end
-  object z1: TEdit
-    Left = 134
-    Top = 15
+  object q1: TEdit
+    Left = 166
+    Top = 8
     Width = 40
     Height = 40
     Align = alCustom
@@ -229,17 +245,18 @@ object Form1: TForm1
     Color = 3221538
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -21
     Font.Name = 'Tahoma'
     Font.Pitch = fpFixed
     Font.Style = []
     ParentFont = False
     TabOrder = 2
     Visible = False
+    OnKeyPress = x1KeyPress
   end
-  object q1: TEdit
-    Left = 190
-    Top = 16
+  object w1: TEdit
+    Left = 221
+    Top = 8
     Width = 40
     Height = 40
     Align = alCustom
@@ -248,17 +265,18 @@ object Form1: TForm1
     Color = 3221538
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -21
     Font.Name = 'Tahoma'
     Font.Pitch = fpFixed
     Font.Style = []
     ParentFont = False
     TabOrder = 3
     Visible = False
+    OnKeyPress = x1KeyPress
   end
-  object w1: TEdit
-    Left = 245
-    Top = 16
+  object x2: TEdit
+    Left = 0
+    Top = 69
     Width = 40
     Height = 40
     Align = alCustom
@@ -267,17 +285,17 @@ object Form1: TForm1
     Color = 3221538
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -21
     Font.Name = 'Tahoma'
     Font.Pitch = fpFixed
     Font.Style = []
     ParentFont = False
     TabOrder = 4
-    Visible = False
+    OnKeyPress = x1KeyPress
   end
-  object x2: TEdit
-    Left = 24
-    Top = 77
+  object y2: TEdit
+    Left = 54
+    Top = 69
     Width = 40
     Height = 40
     Align = alCustom
@@ -286,16 +304,17 @@ object Form1: TForm1
     Color = 3221538
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -21
     Font.Name = 'Tahoma'
     Font.Pitch = fpFixed
     Font.Style = []
     ParentFont = False
     TabOrder = 5
+    OnKeyPress = x1KeyPress
   end
-  object y2: TEdit
-    Left = 78
-    Top = 77
+  object z2: TEdit
+    Left = 110
+    Top = 69
     Width = 40
     Height = 40
     Align = alCustom
@@ -304,16 +323,18 @@ object Form1: TForm1
     Color = 3221538
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -21
     Font.Name = 'Tahoma'
     Font.Pitch = fpFixed
     Font.Style = []
     ParentFont = False
     TabOrder = 6
+    Visible = False
+    OnKeyPress = x1KeyPress
   end
-  object z2: TEdit
-    Left = 134
-    Top = 77
+  object q2: TEdit
+    Left = 166
+    Top = 69
     Width = 40
     Height = 40
     Align = alCustom
@@ -322,17 +343,18 @@ object Form1: TForm1
     Color = 3221538
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -21
     Font.Name = 'Tahoma'
     Font.Pitch = fpFixed
     Font.Style = []
     ParentFont = False
     TabOrder = 7
     Visible = False
+    OnKeyPress = x1KeyPress
   end
-  object q2: TEdit
-    Left = 190
-    Top = 77
+  object w2: TEdit
+    Left = 221
+    Top = 69
     Width = 40
     Height = 40
     Align = alCustom
@@ -341,36 +363,18 @@ object Form1: TForm1
     Color = 3221538
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -21
     Font.Name = 'Tahoma'
     Font.Pitch = fpFixed
     Font.Style = []
     ParentFont = False
     TabOrder = 8
     Visible = False
-  end
-  object w2: TEdit
-    Left = 245
-    Top = 77
-    Width = 40
-    Height = 40
-    Align = alCustom
-    Alignment = taCenter
-    BorderStyle = bsNone
-    Color = 3221538
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWhite
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Pitch = fpFixed
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 9
-    Visible = False
+    OnKeyPress = x1KeyPress
   end
   object x3: TEdit
-    Left = 24
-    Top = 165
+    Left = 0
+    Top = 157
     Width = 40
     Height = 40
     Align = alCustom
@@ -379,7 +383,26 @@ object Form1: TForm1
     Color = 3221538
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    NumbersOnly = True
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 9
+  end
+  object y3: TEdit
+    Left = 54
+    Top = 157
+    Width = 40
+    Height = 40
+    Align = alCustom
+    Alignment = taCenter
+    BorderStyle = bsNone
+    Color = 3221538
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -19
     Font.Name = 'Tahoma'
     Font.Style = []
     NumbersOnly = True
@@ -387,9 +410,9 @@ object Form1: TForm1
     ReadOnly = True
     TabOrder = 10
   end
-  object y3: TEdit
-    Left = 78
-    Top = 165
+  object z3: TEdit
+    Left = 110
+    Top = 157
     Width = 40
     Height = 40
     Align = alCustom
@@ -398,17 +421,18 @@ object Form1: TForm1
     Color = 3221538
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -19
     Font.Name = 'Tahoma'
     Font.Style = []
     NumbersOnly = True
     ParentFont = False
     ReadOnly = True
     TabOrder = 11
+    Visible = False
   end
-  object z3: TEdit
-    Left = 134
-    Top = 165
+  object q3: TEdit
+    Left = 166
+    Top = 157
     Width = 40
     Height = 40
     Align = alCustom
@@ -417,7 +441,7 @@ object Form1: TForm1
     Color = 3221538
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -19
     Font.Name = 'Tahoma'
     Font.Style = []
     NumbersOnly = True
@@ -426,9 +450,9 @@ object Form1: TForm1
     TabOrder = 12
     Visible = False
   end
-  object q3: TEdit
-    Left = 190
-    Top = 165
+  object w3: TEdit
+    Left = 221
+    Top = 157
     Width = 40
     Height = 40
     Align = alCustom
@@ -437,7 +461,7 @@ object Form1: TForm1
     Color = 3221538
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -19
     Font.Name = 'Tahoma'
     Font.Style = []
     NumbersOnly = True
@@ -446,102 +470,117 @@ object Form1: TForm1
     TabOrder = 13
     Visible = False
   end
-  object w3: TEdit
-    Left = 245
-    Top = 165
+  object adding: TButton
+    Left = 304
+    Top = 31
+    Width = 283
+    Height = 36
+    Caption = #1057#1083#1086#1078#1077#1085#1080#1077
+    ImageIndex = 0
+    TabOrder = 14
+    StyleElements = []
+    OnClick = addingClick
+  end
+  object subscription: TButton
+    Left = 304
+    Top = 73
+    Width = 283
+    Height = 36
+    Caption = #1042#1099#1095#1080#1090#1072#1085#1080#1077
+    TabOrder = 15
+    OnClick = subscriptionClick
+  end
+  object scalar: TButton
+    Left = 304
+    Top = 115
+    Width = 283
+    Height = 36
+    Caption = #1057#1082#1072#1083#1103#1088#1085#1086#1077' '#1087#1088#1086#1080#1079#1074#1077#1076#1077#1085#1080#1077
+    TabOrder = 16
+    OnClick = scalarClick
+  end
+  object vector: TButton
+    Left = 304
+    Top = 157
+    Width = 283
+    Height = 36
+    Caption = #1042#1077#1082#1090#1086#1088#1085#1086#1077' '#1087#1088#1086#1080#1079#1074#1077#1076#1077#1085#1080#1077
+    TabOrder = 17
+    OnClick = vectorClick
+  end
+  object draw: TButton
+    Left = 304
+    Top = 199
+    Width = 283
+    Height = 36
+    Caption = #1048#1079#1086#1073#1088#1072#1079#1080#1090#1100' '#1074#1077#1082#1090#1086#1088
+    TabOrder = 18
+    OnClick = drawClick
+  end
+  object create_random: TButton
+    Left = 0
+    Top = 203
+    Width = 261
+    Height = 31
+    Caption = #1047#1072#1087#1086#1083#1085#1080#1090#1100' '#1089#1083#1091#1095#1072#1081#1085#1086
+    TabOrder = 19
+    OnClick = create_randomClick
+  end
+  object VectorAmount: TComboBox
+    Left = 118
+    Top = 253
+    Width = 143
+    Height = 21
+    ParentColor = True
+    TabOrder = 20
+    Text = #1044#1074#1091#1084#1077#1088#1085#1099#1081
+    OnChange = VectorAmountChange
+    Items.Strings = (
+      #1044#1074#1091#1084#1077#1088#1085#1099#1081
+      #1058#1088#1077#1093#1084#1077#1088#1085#1099#1081
+      #1063#1077#1090#1099#1088#1077#1093#1084#1077#1088#1085#1099#1081
+      #1055#1103#1090#1080#1084#1077#1088#1085#1099#1081)
+  end
+  object x1: TEdit
+    Left = 0
+    Top = 8
     Width = 40
     Height = 40
     Align = alCustom
     Alignment = taCenter
     BorderStyle = bsNone
-    Color = 3221538
+    Color = 3221794
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -21
     Font.Name = 'Tahoma'
+    Font.Pitch = fpFixed
     Font.Style = []
-    NumbersOnly = True
     ParentFont = False
-    ReadOnly = True
-    TabOrder = 14
-    Visible = False
-  end
-  object adding: TButton
-    Left = 328
-    Top = 39
-    Width = 283
-    Height = 36
-    Caption = #1057#1083#1086#1078#1077#1085#1080#1077
-    TabOrder = 15
-    StyleElements = []
-    OnClick = addingClick
-  end
-  object subscription: TButton
-    Left = 328
-    Top = 81
-    Width = 283
-    Height = 36
-    Caption = #1042#1099#1095#1080#1090#1072#1085#1080#1077
-    TabOrder = 16
-    OnClick = subscriptionClick
-  end
-  object scalar: TButton
-    Left = 328
-    Top = 123
-    Width = 283
-    Height = 36
-    Caption = #1057#1082#1072#1083#1103#1088#1085#1086#1077' '#1087#1088#1086#1080#1079#1074#1077#1076#1077#1085#1080#1077
-    TabOrder = 17
-    OnClick = scalarClick
-  end
-  object vector: TButton
-    Left = 328
-    Top = 165
-    Width = 283
-    Height = 36
-    Caption = #1042#1077#1082#1090#1086#1088#1085#1086#1077' '#1087#1088#1086#1080#1079#1074#1077#1076#1077#1085#1080#1077
-    TabOrder = 18
-    OnClick = vectorClick
-  end
-  object draw: TButton
-    Left = 328
-    Top = 207
-    Width = 283
-    Height = 36
-    Caption = #1048#1079#1086#1073#1088#1072#1079#1080#1090#1100' '#1074#1077#1082#1090#1086#1088
-    TabOrder = 19
-    OnClick = drawClick
-  end
-  object create_random: TButton
-    Left = 24
-    Top = 239
-    Width = 261
-    Height = 31
-    Caption = #1047#1072#1087#1086#1083#1085#1080#1090#1100' '#1089#1083#1091#1095#1072#1081#1085#1086
-    TabOrder = 20
-    OnClick = create_randomClick
-  end
-  object Button1: TButton
-    Left = 656
-    Top = 248
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
     TabOrder = 21
+    OnKeyPress = x1KeyPress
   end
-  object VectorAmount: TComboBox
-    Left = 328
-    Top = 249
-    Width = 193
+  object LeftBorder: TEdit
+    Left = 20
+    Top = 253
+    Width = 33
     Height = 21
-    ParentColor = True
     TabOrder = 22
-    Text = #1044#1074#1091#1084#1077#1088#1085#1099#1081' '#1074#1077#1082#1090#1086#1088
-    OnChange = VectorAmountChange
-    Items.Strings = (
-      #1044#1074#1091#1084#1077#1088#1085#1099#1081' '#1074#1077#1082#1090#1086#1088
-      #1058#1088#1077#1093#1084#1077#1088#1085#1099#1081' '#1074#1077#1082#1090#1086#1088
-      #1063#1077#1090#1099#1088#1077#1093#1084#1077#1088#1085#1099#1081' '#1074#1077#1082#1090#1086#1088
-      #1055#1103#1090#1080#1084#1077#1088#1085#1099#1081' '#1074#1077#1082#1090#1086#1088)
+  end
+  object RightBorder: TEdit
+    Left = 79
+    Top = 253
+    Width = 33
+    Height = 21
+    TabOrder = 23
+  end
+  object TurnVector: TButton
+    Left = 304
+    Top = 241
+    Width = 283
+    Height = 36
+    Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1100' '#1074#1077#1082#1090#1086#1088
+    TabOrder = 24
+    OnClick = TurnVectorClick
   end
 end
