@@ -30,7 +30,7 @@ void __fastcall TForm1::addingClick(TObject *Sender) {
 			<< " = " << toint(x3->Text) << "\n";
 		solution << toint(y1->Text) << " + " << toint(y2->Text)
 			<< " = " << toint(y3->Text) << "\n";
-		if (VectorAmount->Text == "Трехмерный вектор") {
+		if (VectorAmount->Text == "Трехмерный") {
 			if (z1->Text != "" && z2->Text != "") {
 				solution << toint(z1->Text) << " + " << toint(z2->Text)
 					<< " = " << toint(z3->Text) << "\n";
@@ -41,7 +41,7 @@ void __fastcall TForm1::addingClick(TObject *Sender) {
 			}
 
 		}
-		if (VectorAmount->Text == "Четырехмерный вектор") {
+		if (VectorAmount->Text == "Четырехмерный") {
 			if (z1->Text != "" && z2->Text != "") {
 				z3->Text = toint(z1->Text) + toint(z2->Text);
 				solution << toint(z1->Text) << " + " << toint(z2->Text)
@@ -59,7 +59,7 @@ void __fastcall TForm1::addingClick(TObject *Sender) {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
 		}
-		if (VectorAmount->Text == "Пятимерный вектор") {
+		if (VectorAmount->Text == "Пятимерный") {
 			if (z1->Text != "" && z2->Text != "") {
 				z3->Text = toint(z1->Text) + toint(z2->Text);
 				solution << toint(z1->Text) << " + " << toint(z2->Text)
@@ -102,7 +102,7 @@ void __fastcall TForm1::subscriptionClick(TObject *Sender) {
 			<< " = " << toint(x3->Text) << "\n";
 		solution << toint(y1->Text) << " - " << toint(y2->Text)
 			<< " = " << toint(y3->Text) << "\n";
-		if (VectorAmount->Text == "Трехмерный вектор") {
+		if (VectorAmount->Text == "Трехмерный") {
 			if (z1->Text != "" && z2->Text != "") {
 				solution << toint(z1->Text) << " - " << toint(z2->Text)
 					<< " = " << toint(z3->Text) << "\n";
@@ -113,7 +113,7 @@ void __fastcall TForm1::subscriptionClick(TObject *Sender) {
 			}
 
 		}
-		if (VectorAmount->Text == "Четырехмерный вектор") {
+		if (VectorAmount->Text == "Четырехмерный") {
 			if (z1->Text != "" && z2->Text != "") {
 				z3->Text = toint(z1->Text) - toint(z2->Text);
 				solution << toint(z1->Text) << " - " << toint(z2->Text)
@@ -131,7 +131,7 @@ void __fastcall TForm1::subscriptionClick(TObject *Sender) {
 				ErrorLabel->Caption = "Заполните все поля!";
 			}
 		}
-		if (VectorAmount->Text == "Пятимерный вектор") {
+		if (VectorAmount->Text == "Пятимерный") {
 			if (z1->Text != "" && z2->Text != "") {
 				z3->Text = toint(z1->Text) - toint(z2->Text);
 				solution << toint(z1->Text) << " - " << toint(z2->Text)
@@ -175,7 +175,7 @@ void __fastcall TForm1::scalarClick(TObject *Sender) {
 			<< " = " << toint(x1->Text) * toint(x2->Text) << '\n';
 		solution << toint(y1->Text) << " * " << toint(y2->Text)
 			<< " = " << toint(y1->Text) * toint(y2->Text) << '\n';
-		if (VectorAmount->Text == "Трехмерный вектор") {
+		if (VectorAmount->Text == "Трехмерный") {
 			if (z1->Text != "" && z2->Text != "") {
 				result += toint(z1->Text) * toint(z2->Text);
 				solution << toint(z1->Text) << " * " << toint(z2->Text)
@@ -186,7 +186,7 @@ void __fastcall TForm1::scalarClick(TObject *Sender) {
 			}
 
 		}
-		if (VectorAmount->Text == "Четырехмерный вектор") {
+		if (VectorAmount->Text == "Четырехмерный") {
 			if (z1->Text != "" && z2->Text != "") {
 				result += toint(z1->Text) * toint(z2->Text);
 				solution << toint(z1->Text) << " * " << toint(z2->Text)
@@ -205,7 +205,7 @@ void __fastcall TForm1::scalarClick(TObject *Sender) {
 			}
 
 		}
-		if (VectorAmount->Text == "Пятимерный вектор") {
+		if (VectorAmount->Text == "Пятимерный") {
 			if (z1->Text != "" && z2->Text != "") {
 				solution << toint(z1->Text) << " * " << toint(z2->Text)
 					<< " = " << toint(z1->Text) * toint(z2->Text) << '\n';
@@ -246,7 +246,7 @@ void __fastcall TForm1::scalarClick(TObject *Sender) {
 // ---------------------------------------------------------------------------
 
 void __fastcall TForm1::drawClick(TObject *Sender) {
-	if (VectorAmount->Text == "Двумерный вектор" && x1->Text != "" &&
+	if (VectorAmount->Text == "Двумерный" && x1->Text != "" &&
 		y1->Text != "") {
 		fstream coordinates_file("coords.txt", ios::out);
 		coordinates_file << (toint(x1->Text));
@@ -255,7 +255,7 @@ void __fastcall TForm1::drawClick(TObject *Sender) {
 		coordinates_file.close();
 		system("py draw2D.py");
 	}
-	else if (VectorAmount->Text == "Трехмерный вектор" && x1->Text != "" &&
+	else if (VectorAmount->Text == "Трехмерный" && x1->Text != "" &&
 		y1->Text != "" && z1->Text != "") {
 		fstream coordinates_file("coords.txt", ios::out);
 		coordinates_file << (toint(x1->Text));
@@ -270,7 +270,7 @@ void __fastcall TForm1::drawClick(TObject *Sender) {
 // ---------------------------------------------------------------------------
 
 void __fastcall TForm1::vectorClick(TObject *Sender) {
-	if (VectorAmount->Text == "Трехмерный вектор") {
+	if (VectorAmount->Text == "Трехмерный") {
 		if (x1->Text != "" && y1->Text != "" && z1->Text != "" && x2->Text !=
 			"" && y2->Text != "" && z2->Text != "") {
 			x3->Text =
@@ -327,17 +327,17 @@ void __fastcall TForm1::create_randomClick(TObject *Sender) {
 		x2->Text = random(right - left) + left;
 		y1->Text = random(right - left) + left;
 		y2->Text = random(right - left) + left;
-		if (VectorAmount->Text == "Трехмерный вектор") {
+		if (VectorAmount->Text == "Трехмерный") {
 			z1->Text = random(right - left) + left;
 			z2->Text = random(right - left) + left;
 		}
-		if (VectorAmount->Text == "Четырехмерный вектор") {
+		if (VectorAmount->Text == "Четырехмерный") {
 			z1->Text = random(right - left) + left;
 			z2->Text = random(right - left) + left;
 			q1->Text = random(right - left) + left;
 			q2->Text = random(right - left) + left;
 		}
-		if (VectorAmount->Text == "Пятимерный вектор") {
+		if (VectorAmount->Text == "Пятимерный") {
 			z1->Text = random(right - left) + left;
 			z2->Text = random(right - left) + left;
 			w1->Text = random(right - left) + left;
@@ -356,7 +356,7 @@ void __fastcall TForm1::create_randomClick(TObject *Sender) {
 
 // ---------------------------------------------------------------------------
 void __fastcall TForm1::VectorAmountChange(TObject *Sender) {
-	if (VectorAmount->Text == "Двумерный вектор") {
+	if (VectorAmount->Text == "Двумерный") {
 		z1->Visible = false;
 		z2->Visible = false;
 		z3->Visible = false;
@@ -367,12 +367,12 @@ void __fastcall TForm1::VectorAmountChange(TObject *Sender) {
 		q2->Visible = false;
 		q3->Visible = false;
 	}
-	if (VectorAmount->Text == "Трехмерный вектор") {
+	if (VectorAmount->Text == "Трехмерный") {
 		z1->Visible = true;
 		z2->Visible = true;
 		z3->Visible = true;
 	}
-	if (VectorAmount->Text == "Четырехмерный вектор") {
+	if (VectorAmount->Text == "Четырехмерный") {
 		z1->Visible = true;
 		z2->Visible = true;
 		z3->Visible = true;
@@ -380,7 +380,7 @@ void __fastcall TForm1::VectorAmountChange(TObject *Sender) {
 		q2->Visible = true;
 		q3->Visible = true;
 	}
-	if (VectorAmount->Text == "Пятимерный вектор") {
+	if (VectorAmount->Text == "Пятимерный") {
 		z1->Visible = true;
 		z2->Visible = true;
 		z3->Visible = true;
